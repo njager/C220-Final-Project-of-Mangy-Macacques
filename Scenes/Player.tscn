@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Agents/Player/platformChar_idle.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.7572, 35.082 )
+extents = Vector2( 13.925, 16.4854 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -13,8 +13,6 @@ script = ExtResource( 1 )
 current = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.18256, -0.788368 )
-scale = Vector2( 1, 1.01642 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
@@ -24,5 +22,6 @@ texture = ExtResource( 2 )
 [node name="Muzzle" type="Node2D" parent="Gun"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.57675, 14.1906 )
+position = Vector2( 0.00959826, 14.7897 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )

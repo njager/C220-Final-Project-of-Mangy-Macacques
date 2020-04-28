@@ -8,6 +8,7 @@ var damage : int = 1
 
 #components
 onready var ui = get_node("CanvasLayer/UI")
+onready var Bullet = load("res://Scenes/Bullet.tscn")
 
 func give_score(amount):
 	score += amount
@@ -25,6 +26,10 @@ func _physics_process(delta: float) -> void:
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
 	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
+	if Input.is_action_pressed("shoot"):
+		var b = Bullet.instance()
+		b.position = position
+		get_node("root/Level/Bullets").fire(b)
 	#Find move direction for gun
 	var move_direction = int(Input.get_action_strength("right")) - int(Input.get_action_strength("left"))
 

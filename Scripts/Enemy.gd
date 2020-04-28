@@ -6,6 +6,7 @@ var maxHp : int = 3
 var damage : int = 1
 var atttackRate : float = 1.0
 var moveSpeed : float = 4
+var score : int = 5
 
 export var damageToTake : int = 1
 

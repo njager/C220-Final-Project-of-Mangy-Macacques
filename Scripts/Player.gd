@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shoot"):
 		var b = Bullet.instance()
 		b.position = position
-		get_node("root/Level/Bullets").fire(b)
+		get_node("/root/Level/Bullets").fire(b)
 	#Find move direction for gun
 	var move_direction = int(Input.get_action_strength("right")) - int(Input.get_action_strength("left"))
 

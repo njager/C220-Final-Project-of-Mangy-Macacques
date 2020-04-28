@@ -49,3 +49,4 @@ func calculate_move_velocity(linear_velocity: Vector2,
 
 func die() -> void:
 	queue_free()
+

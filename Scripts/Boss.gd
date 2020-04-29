@@ -1,12 +1,12 @@
 extends Actor
 
 #stats
-var curHp : int = 3
-var maxHp : int = 15
+var curHp : int = 15
+var maxHp : int = 50
 var damage : int = 1
 var atttackRate : float = 1.0
 var moveSpeed : float = 0
-var score : int = 5
+var score : int = 50
 
 export var damageToTake : int = 1
 export var fire_probability = 0.5
@@ -23,15 +23,6 @@ func _ready():
 	timer.wait_time = atttackRate
 	attack_is_ready = false
 	_velocity.x = -speed.x
-
-func _physics_process(delta):
-	#_velocity.x *= -1 if is_on_wall() else 1
-	#_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-	#animation switch
-	if _velocity.x == -1:
-		$Sprite/AnimationPlayer.play("BRolling")
-	else:
-		$Sprite/AnimationPlayer.play("Rolling")
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
@@ -52,8 +43,7 @@ func die():
 	queue_free()
 
 func _on_Shoottimer_timeout():
-	if randf() < fire_probability:
-		var b = EnemyBullet.instance()
-		b.position = position
-		b.position.y += 25
-		get_node("/root/Game/Enemy Bullets").add_child(b)
+	var b = EnemyBullet.instance()
+	b.position = position
+	b.position.y = position.y+70
+	get_node("/root/Level/EnemyBullets").add_child(b)

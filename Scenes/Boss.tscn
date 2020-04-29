@@ -7,6 +7,8 @@
 radius = 109.448
 
 [node name="Boss" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -27,4 +29,5 @@ one_way_collision = true
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Shoottimer" type="Timer" parent="."]
-one_shot = true
+autostart = true
+[connection signal="timeout" from="Shoottimer" to="." method="_on_Shoottimer_timeout"]

@@ -91,6 +91,9 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=4]
+radius = 37.0
+
+[sub_resource type="CircleShape2D" id=5]
 radius = 34.4739
 
 [sub_resource type="ParticlesMaterial" id=5]
@@ -121,12 +124,19 @@ space_override = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -4.11917, 2.24683 )
 
+shape = SubResource( 4 )
+
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.86819, 3.37025 )
+
+shape = SubResource( 5 )
+
 shape = SubResource( 4 )
+
 
 [node name="EParticle" type="Particles2D" parent="."]
 rotation = -1.5708

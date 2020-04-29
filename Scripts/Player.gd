@@ -2,8 +2,8 @@ extends Actor
 
 #stats
 var score : int = 0 setget give_score
-var curHp : int = 5
-var maxHp : int = 5
+var curHp : int = 10
+var maxHp : int = 10
 var damage : int = 1
 var deaths : int = 0 setget set_deaths
 

@@ -3,11 +3,9 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/enemy.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sound/ronadyingsound.wav" type="AudioStream" id=3]
-
 [ext_resource path="res://Assets/Agents/picked.tres" type="Animation" id=4]
 
 [sub_resource type="Animation" id=1]
-
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -23,9 +21,7 @@ tracks/0/keys = {
 "values": [ 0.0, -360.0 ]
 }
 
-
 [sub_resource type="Animation" id=2]
-
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
@@ -39,7 +35,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 360.0 ]
 }
-
 
 [sub_resource type="Animation" id=3]
 resource_name = "edeath"
@@ -96,10 +91,9 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 39.3024
+radius = 37.0
 
 [sub_resource type="CircleShape2D" id=5]
-
 radius = 34.4739
 
 [sub_resource type="ParticlesMaterial" id=6]
@@ -129,16 +123,14 @@ space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -4.11917, 2.24683 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.86819, 3.37025 )
 shape = SubResource( 5 )
-
 
 [node name="EParticle" type="Particles2D" parent="."]
 rotation = -1.5708

@@ -7,10 +7,10 @@
 [ext_resource path="res://Assets/UI/end_screen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/MenuGradient.tres" type="Gradient" id=6]
 
-[sub_resource type="GradientTexture" id=2]
+[sub_resource type="GradientTexture" id=1]
 gradient = ExtResource( 6 )
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=2]
 
 [node name="MenuScreen" type="Control"]
 anchor_right = 1.0
@@ -27,14 +27,14 @@ margin_right = 3160.0
 margin_bottom = -224.0
 rect_rotation = 90.0
 rect_scale = Vector2( 21.332, 29.8936 )
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 576.0
 margin_top = 200.0
 margin_right = 1270.0

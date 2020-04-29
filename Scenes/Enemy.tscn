@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/enemy.png" type="Texture" id=2]
@@ -37,8 +37,19 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 37.0
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 29.1
+flag_disable_z = true
+gravity = Vector3( -100, 0, 0 )
+initial_velocity = 80.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+color = Color( 0.196078, 0.537255, 0.14902, 1 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -56,14 +67,14 @@ space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -4.11917, 2.24683 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.86819, 3.37025 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="EParticle" type="Particles2D" parent="."]
 rotation = -1.5708
@@ -74,6 +85,7 @@ one_shot = true
 speed_scale = 5.0
 explosiveness = 0.68
 randomness = 0.21
+process_material = SubResource( 4 )
 
 [node name="EDie" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )

@@ -14,18 +14,9 @@ func _physics_process(delta):
 			Player.give_score(c.score)
 			c.die()
 		queue_free()
+	
 
-
-#	if position.y > 0:
-#		queue_free()
-#	elif position.y < 1200:
-#		queue_free()
-#	elif position.x < 0:
-#		queue_free()
-#	elif position.x > 8300:
-#		queue_free()
-
-		
 func _integrate_forces(state):
-	state.set_linear_velocity(Vector2(180,speed))
+	state.set_linear_velocity(Vector2(speed,0))
 	state.set_angular_velocity(0)
+

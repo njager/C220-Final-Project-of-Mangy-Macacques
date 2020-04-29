@@ -26,6 +26,9 @@ func _physics_process(delta: float) -> void:
 		var b = Bullet.instance()
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
+	#play jump sound
+	if Input.is_action_just_pressed("up"):
+		$JumpSound.playing = true
 
 
 func get_direction() -> Vector2:

@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 export var speed = 500
-onready var Player = get_node("/root/Game/Scenes/Player")
+onready var Player = get_node("/root/Level/Player")
 
 func _ready():
 	contact_monitor = true

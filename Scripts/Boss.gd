@@ -30,20 +30,20 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Bullet":
 		enemy.take_damage(damageToTake)
 
-func _on_Timer_timeout():
-	attack_is_ready = true
-
 func take_damage(damageToTake):
 	curHp -= damageToTake
 	if curHp <= 0:
 		die()
-
-func die():
-	player.give_score(escoreToGive)
-	queue_free()
 
 func _on_Shoottimer_timeout():
 	var b = EnemyBullet.instance()
 	b.position = position
 	b.position.y = position.y+70
 	get_node("/root/Level/EnemyBullets").add_child(b)
+
+func die():
+	player.give_score(escoreToGive)
+	get_tree().change_scene("res://Scenes/EndScreen.tscn")
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Scenes/EndScreen.tscn")

@@ -3,7 +3,6 @@ extends RigidBody2D
 export var speed = 500
 onready var Player = get_node("/root/Level/Player")
 
-
 func _ready():
 	contact_monitor = true
 	set_max_contacts_reported(4)

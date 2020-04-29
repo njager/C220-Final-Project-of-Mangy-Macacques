@@ -60,6 +60,8 @@ func _process(delta):
 		$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("left"):
 		$AnimatedSprite.play("walkleft")
+	elif Input.is_action_pressed("up"):
+		$AnimatedSprite.play("jump")
 	else:
 		$AnimatedSprite.play("happy")
 

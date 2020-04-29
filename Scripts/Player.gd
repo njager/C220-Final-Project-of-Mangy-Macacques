@@ -1,15 +1,15 @@
 extends Actor
 
 #stats
-var score : int = 0
+var score : int = 0 setget give_score
 var curHp : int = 5
 var maxHp : int = 5
 var damage : int = 1
+var deaths : int = 0 setget set_deaths
 
 #components
 onready var ui = get_node("CanvasLayer/UI")
-onready var Bullet = load("res://Scenes/Bullet.tscn")
-onready var Bullet2 = load("res://Scenes/Bullet2.tscn")
+onready var gunSound = get_node("/root/Level/Player/GunSound")
 onready var Bullet3 = load("res://Scenes/Bullet3.tscn")
 onready var Bullet4 = load("res://Scenes/Bullet4.tscn")
 onready var muzzle  = get_node("/root/Level/Player/Gun/Muzzle")
@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
 
-
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -59,6 +58,9 @@ func give_score(amount):
 	score += amount
 	ui.update_score_text(score)
 
+func set_deaths(new_value: int) -> void:
+	deaths = new_value
+
 func take_damagep(damageToTake):
 	curHp -= damageToTake
 	ui.update_health_bar(curHp, maxHp)
@@ -66,4 +68,5 @@ func take_damagep(damageToTake):
 		die()
 
 func die() -> void:
+	deaths += 1
 	get_tree().reload_current_scene()

@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/EndScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/Voices From Heaven.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlayButton.tscn" type="PackedScene" id=4]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ESBackground" type="TextureRect" parent="."]
+margin_left = -72.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = 8.0
+rect_scale = Vector2( 29.5693, 16.2421 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 72.0
+margin_right = 564.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1.73496, 1.73496 )
+text = "Congratulations! You beat our game.
+Thank you for playing!
+Made by Emma Callahan, Derek Karmolinksi, and Nicholas Jager"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Result" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 208.0
+margin_right = 560.0
+margin_bottom = 222.0
+rect_scale = Vector2( 1.67854, 1.67854 )
+text = "Your final score is: %s and you died %s times!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 408.0
+margin_top = 304.0
+margin_right = 615.0
+margin_bottom = 388.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_right = 207.0
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 44.0
+margin_right = 207.0
+margin_bottom = 84.0
+
+[node name="EndMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

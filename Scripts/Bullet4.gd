@@ -4,6 +4,10 @@ var damage: int = 1
 
 export var speed: float = -500.0
 onready var Player = get_node("/root/Level/Player")
+onready var gunSound = get_node("/root/Level/Player/GunSound")
+
+func _ready():
+	gunSound.playing = true
 
 func _physics_process(delta):
 	position.x += speed * delta

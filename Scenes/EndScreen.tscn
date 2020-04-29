@@ -51,7 +51,7 @@ margin_bottom = 120.0
 rect_scale = Vector2( 1.73496, 1.73496 )
 text = "Congratulations! You beat our game.
 Thank you for playing!
-Made by Emma Callahan, Derek Karmolinksi, and Nicholas Jager"
+Made by Emma Callahan, Derek Karmolinski, and Nicholas Jager"
 align = 1
 valign = 1
 __meta__ = {

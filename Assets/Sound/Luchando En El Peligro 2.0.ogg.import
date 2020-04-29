@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Luchando En El Peligro 2.0.ogg-04c8950d16697695133a36dd1c855922.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Luchando En El Peligro 2.0.ogg"
+dest_files=[ "res://.import/Luchando En El Peligro 2.0.ogg-04c8950d16697695133a36dd1c855922.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

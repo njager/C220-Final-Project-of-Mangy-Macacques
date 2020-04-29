@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Rona Rampage"
 run/main_scene="res://Scenes/Level.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Agents/enemy.png"
 
 [input]
 

@@ -10,6 +10,10 @@ var damage : int = 1
 onready var ui = get_node("CanvasLayer/UI")
 onready var Bullet = load("res://Scenes/Bullet.tscn")
 
+func _ready():
+	ui.update_health_bar(curHp, maxHp)
+	ui.update_score_text(score)
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted = Input.is_action_just_released("up") and _velocity.y < 0.0 #removed a colon
 	var direction: = get_direction()
@@ -44,12 +48,14 @@ func calculate_move_velocity(linear_velocity: Vector2,
 
 func give_score(amount):
 	score += amount
+	ui.update_score_text(score)
 
 func take_damage(damageToTake):
 	curHp -= damageToTake
+	ui.update_health_bar(curHp, maxHp)
 	if curHp <= 0:
 		die()
 
 func die() -> void:
-	queue_free()
+	get_tree().reload_current_scene()
 

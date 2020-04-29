@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Agents/Player/platformChar_walk1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Agents/Player/charwalkleft1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Agents/Player/platformChar_walk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Agents/Player/platformChar_jump.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Agents/Player/charwalkleft.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sound/shootingsound.wav" type="AudioStream" id=8]
@@ -12,6 +13,18 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "happy",
+"speed": 5.0
+}, {
+
 "frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walkleft",
@@ -50,7 +63,9 @@ editor_draw_drag_margin = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "walkleft"
+
+animation = "jump"
+
 playing = true
 
 [node name="Gun" type="Sprite" parent="."]
@@ -64,14 +79,14 @@ shape = SubResource( 2 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
-volume_db = -16.0
+volume_db = -5.0
 
 [node name="GunSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
-volume_db = -15.0
+volume_db = -5.0
 attenuation = 0.34151
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true

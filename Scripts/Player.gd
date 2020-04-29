@@ -35,6 +35,22 @@ func _physics_process(delta: float) -> void:
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
 
+#Animations
+func _process(delta):
+	if Input.is_action_pressed("right"):
+		$AnimatedSprite.play("walk")
+	else:
+		$AnimatedSprite.stop()
+	
+	#if Input.is_action_pressed("left"):
+		#$AnimatedSprite.play("walkleft")
+	#else:
+		#$AnimatedSprite.stop()
+	
+	#if Input.is_action_pressed("up"):
+		#$AnimatedSprite.play("jump")
+	#else:
+		#$AnimatedSprite.stop()
 
 func get_direction() -> Vector2:
 	return Vector2(

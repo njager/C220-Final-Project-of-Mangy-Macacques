@@ -3,7 +3,8 @@
 [ext_resource path="res://Assets/tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=4]
+
+[ext_resource path="res://Scripts/Bullets.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -156,5 +157,10 @@ position = Vector2( 149.311, 186.35 )
 [node name="Coin" parent="." instance=ExtResource( 3 )]
 position = Vector2( 653.462, 200.416 )
 
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 784.751, 204.869 )
+
+[node name="Bullets" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="Bullets"]
+one_shot = true
+[connection signal="timeout" from="Bullets/Timer" to="Bullets" method="_on_Timer_timeout"]

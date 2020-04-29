@@ -17,6 +17,11 @@ animations = [ {
 "name": "duck",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "happy",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "jump",
@@ -25,11 +30,6 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "happy",
 "speed": 5.0
 } ]
 
@@ -56,6 +56,7 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="Gun" type="Sprite" parent="."]

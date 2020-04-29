@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var damage: int = 1
+
 export var speed = 500
 onready var Player = get_node("/root/Level/Player")
 
@@ -10,9 +12,8 @@ func _ready():
 func _physics_process(delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
-		if c.get_parent().name == "Enemies":
-			Player.give_score(c.score)
-			c.die()
+		if c.get_parent().name == "Enemy":
+			c.take_damage(damage)
 		queue_free()
 	
 

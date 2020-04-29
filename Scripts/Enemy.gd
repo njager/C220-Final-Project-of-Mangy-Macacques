@@ -24,6 +24,11 @@ func _ready():
 func _physics_process(delta):
 	_velocity.x *= -1 if is_on_wall() else 1
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+	#animation switch
+	if _velocity.x == -1:
+		$Sprite/AnimationPlayer.play("BRolling")
+	else:
+		$Sprite/AnimationPlayer.play("Rolling")
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":

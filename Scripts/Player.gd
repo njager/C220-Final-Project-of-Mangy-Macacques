@@ -9,6 +9,7 @@ var damage : int = 1
 #components
 onready var ui = get_node("CanvasLayer/UI")
 onready var Bullet = load("res://Scenes/Bullet.tscn")
+onready var Bullet2 = load("res://Scenes/Bullet2.tscn")
 
 func _ready():
 	ui.update_health_bar(curHp, maxHp)
@@ -26,9 +27,10 @@ func _physics_process(delta: float) -> void:
 		var b = Bullet.instance()
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
-	#play jump sound
-	if Input.is_action_just_pressed("up"):
-		$JumpSound.playing = true
+	if Input.is_action_pressed("shoot2"):
+		var b = Bullet2.instance()
+		b.position = position
+		get_node("/root/Level/Bullets").fire(b)
 
 
 func get_direction() -> Vector2:
@@ -62,4 +64,3 @@ func take_damage(damageToTake):
 
 func die() -> void:
 	get_tree().reload_current_scene()
-

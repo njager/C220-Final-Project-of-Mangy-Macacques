@@ -13,7 +13,7 @@ export var damageToTake : int = 1
 
 #components
 onready var timer = get_node("Timer")
-onready var player = get_node("res://Scenes/Player.tscn")
+onready var player = get_node("/root/Level/Player")
 onready var attack_is_ready : bool
 
 func _ready():
@@ -26,8 +26,8 @@ func _physics_process(delta):
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 func _on_Area2D_body_entered(body):
-	if attack_is_ready == true:
-		player.take_damage()
+	if body.name == "Player":
+		player.take_damage(damageToTake)
 
 func _on_Timer_timeout():
 	attack_is_ready = true

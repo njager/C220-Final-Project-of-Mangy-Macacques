@@ -2,23 +2,13 @@ extends Actor
 
 #stats
 var score : int = 0
-var curHp : int = 10
-var maxHp : int = 10
+var curHp : int = 5
+var maxHp : int = 5
 var damage : int = 1
 
 #components
 onready var ui = get_node("CanvasLayer/UI")
 onready var Bullet = load("res://Scenes/Bullet.tscn")
-
-func give_score(amount):
-	score += amount
-	ui.update_score_text(score)
-
-func take_damage(damageToTake):
-	curHp -= damageToTake
-	ui.update_health_bar(curHp, maxHp)
-	if curHp <= 0:
-		die()
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted = Input.is_action_just_released("up") and _velocity.y < 0.0 #removed a colon
@@ -51,6 +41,14 @@ func calculate_move_velocity(linear_velocity: Vector2,
 	if is_jump_interrupted:
 		velocity.y = 0.0
 	return velocity
+
+func give_score(amount):
+	score += amount
+
+func take_damage(damageToTake):
+	curHp -= damageToTake
+	if curHp <= 0:
+		die()
 
 func die() -> void:
 	queue_free()

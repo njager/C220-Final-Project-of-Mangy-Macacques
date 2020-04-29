@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rona Rampage"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/MenuScreen.tscn"
 config/icon="res://Assets/Agents/enemy.png"
 
 [input]

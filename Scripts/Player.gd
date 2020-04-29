@@ -10,6 +10,9 @@ var damage : int = 1
 onready var ui = get_node("CanvasLayer/UI")
 onready var Bullet = load("res://Scenes/Bullet.tscn")
 onready var Bullet2 = load("res://Scenes/Bullet2.tscn")
+onready var Bullet3 = load("res://Scenes/Bullet3.tscn")
+onready var Bullet4 = load("res://Scenes/Bullet4.tscn")
+onready var muzzle  = get_node("/root/Level/Player/Gun/Muzzle")
 
 func _ready():
 	ui.update_health_bar(curHp, maxHp)
@@ -24,11 +27,11 @@ func _physics_process(delta: float) -> void:
 		#Find move direction for gun
 	var move_direction = int(Input.get_action_strength("right")) - int(Input.get_action_strength("left"))
 	if Input.is_action_pressed("shoot"):
-		var b = Bullet.instance()
+		var b = Bullet3.instance()
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
 	if Input.is_action_pressed("shoot2"):
-		var b = Bullet2.instance()
+		var b = Bullet4.instance()
 		b.position = position
 		get_node("/root/Level/Bullets").fire(b)
 
@@ -56,7 +59,7 @@ func give_score(amount):
 	score += amount
 	ui.update_score_text(score)
 
-func take_damage(damageToTake):
+func take_damagep(damageToTake):
 	curHp -= damageToTake
 	ui.update_health_bar(curHp, maxHp)
 	if curHp <= 0:

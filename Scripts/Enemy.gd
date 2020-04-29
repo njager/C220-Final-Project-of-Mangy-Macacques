@@ -10,10 +10,11 @@ var score : int = 5
 
 export var damageToTake : int = 1
 
-
 #components
 onready var timer = get_node("Timer")
 onready var player = get_node("/root/Level/Player")
+onready var enemy = get_node("/root/Level/Enemy")
+export var escoreToGive : int = 10
 onready var attack_is_ready : bool
 
 func _ready():
@@ -32,7 +33,9 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		player.take_damage(damageToTake)
+		player.take_damagep(damageToTake)
+	if body.name == "Bullet":
+		enemy.take_damage(damageToTake)
 
 func _on_Timer_timeout():
 	attack_is_ready = true
@@ -43,5 +46,6 @@ func take_damage(damageToTake):
 		die()
 
 func die():
+	player.give_score(escoreToGive)
 	queue_free()
 

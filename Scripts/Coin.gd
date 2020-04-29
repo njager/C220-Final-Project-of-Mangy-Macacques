@@ -1,13 +1,20 @@
 extends Area2D
 
-onready var anim_player: AnimationPlayer = $AnimationPlayer
+onready var pillSound: AudioStreamPlayer2D = $PillSound
+onready var pillParticle: Particles2D = $PillParticle
+onready var player = get_node("/root/Level/Player")
 
-export var scoreToGive : int = 5
+export var pscoreToGive : int = 5
 
 func _ready():
 	$AnimationPlayer.play("Bob")
 
 func _on_Coin_body_entered(body):
 	if body.name == "Player":
-		body.give_score(scoreToGive)
-		queue_free()
+		picked()
+
+func picked():
+	player.give_score(pscoreToGive)
+	pillSound.playing = true
+	pillParticle.emitting = true
+	$AnimationPlayer.play("picked")

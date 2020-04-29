@@ -14,6 +14,7 @@ export var damageToTake : int = 1
 #components
 onready var timer = get_node("Timer")
 onready var player = get_node("/root/Level/Player")
+export var escoreToGive : int = 5
 onready var attack_is_ready : bool
 
 func _ready():
@@ -43,5 +44,6 @@ func take_damage(damageToTake):
 		die()
 
 func die():
+	player.give_score(escoreToGive)
 	queue_free()
 

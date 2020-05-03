@@ -1,47 +1,40 @@
-Name:
-Date:
+Name: Steven Wren
+Date: 5/2/2020
 
 Project: 
+C220-Final-Project-of-Mangy-Macacques
+
 Group's repository: 
-
-
+https://github.com/njager/C220-Final-Project-of-Mangy-Macacques
 
 What is something you learned by reviewing this group's project?
-
- 
+I didn't really learn anything from reviewing this project.
 
 In what ways does this game reflect the theme?
-
- 
+It reflects the theme by having enemies based off of COVID and collectibles based of medicine.
 
 What is something you saw in this group's project that you would like to apply to your own future games?
-
- 
+I liked how they had a health bar as opposed to just showing a number.
 
 What suggestions would you have for this group to improve the game?
-
- 
+Perhaps no having the boss be straight to the right. There wasn't really much to explore. 
 
 Was there anything in the GDScript that was confusing to you? If so, what?
-
- 
+The GDScript looked good to me.
 
 Is it clear that every group member participated?
-
- 
+Yes. Since Derek and Jager are both listed as Contributions Programming, it's difficult to tell who did what. However, based on the 
+amount of code it must have been a collaborative effort.
 
 Does the repository contain an appropriate LICENSE?
-
+Yes.
  
 
 What is something the group could add to the README.md to make it more descriptive?
-
- 
+Both W and Space performedthe same action, but the README made it sound like they would do different things.
 
 Pay a compliment to the group based on the quality of the game.
-
-
+I'm very impressed by how well it runs and how good it looks! Great job!
 
 How many of your points would you allocate to this project?
-
-
+3

@@ -1,0 +1,56 @@
+Name: Aeris Meadows
+Date: 5/2/2020
+
+Project: Rona Rampage
+Group's repository: https://github.com/njager/C220-Final-Project-of-Mangy-Macacques
+
+
+
+What is something you learned by reviewing this group's project?
+In trying to get the projectiles to fire both behind and in front of the player, the enountered issues and instead 
+simply made a pivot and decided to just make firing behind or ahead into to seperate things. This pivoting and problem 
+solving is inspiring, and helps show that becoming too connected to something can be a time waster, but growing from your
+concepts can help complete your game in a faster time. 
+ 
+
+In what ways does this game reflect the theme?
+In this game you shoot germs away inside a bloodstream or intensines? inside the body. This game reflects the theme through
+the lens of a virus fighting robot, and eventually destroying the big boss virus. 
+
+ 
+
+What is something you saw in this group's project that you would like to apply to your own future games?
+I loved the mechanic of having a boss at the end, and having to defeat it to win after defeating all the smaller enemies. 
+Although its a simple concept, its well executed in this game. 
+
+ 
+
+What suggestions would you have for this group to improve the game?
+It might be difficult, but i would like to see a damage indicator to know when the germs have been hit, and not just missed, 
+perhaps they could flash red for a moment. 
+
+ 
+
+Was there anything in the GDScript that was confusing to you? If so, what?
+The script seems clear and well laid out, with proper lines doing as they should. 
+ 
+
+Is it clear that every group member participated?
+Based on the ReadMe, everyone did their job well, with well laid out roles. 
+ 
+
+Does the repository contain an appropriate LICENSE?
+This repository contains only one name on the License, but that seems fine to me, as it is one of the creators. 
+ 
+
+What is something the group could add to the README.md to make it more descriptive?
+The ReadMe seems very descriptive already, I'm not sure theres much to add. 
+ 
+
+Pay a compliment to the group based on the quality of the game.
+The game was very enjoyable and i played it many times! If this is updated, i would love to play the updated version. 
+
+
+How many of your points would you allocate to this project?
+3 of 5 points. 
+

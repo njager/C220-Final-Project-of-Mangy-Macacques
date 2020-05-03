@@ -1,0 +1,50 @@
+Name: Allie Brock
+Date: 5/2/2020
+
+Project: Mangy Macacques
+Group's repository: https://github.com/njager/C220-Final-Project-of-Mangy-Macacques
+
+
+
+What is something you learned by reviewing this group's project? 
+	
+ 
+
+In what ways does this game reflect the theme?
+	Fighting gross sickness things and collecting vitamins. I think it reflects well.
+ 
+
+What is something you saw in this group's project that you would like to apply to your own future games?
+	Multiple ways to go through a level.
+ 
+
+What suggestions would you have for this group to improve the game?
+	It seems all the plans you have listed are good ways to improve. I think, making the enemies'
+	HP clearer would help. And adjusting the speed of the enemies compared to bullets, as they can 
+	sometimes outrun them.
+ 
+
+Was there anything in the GDScript that was confusing to you? If so, what?
+	Not really.
+ 
+
+Is it clear that every group member participated? 
+	Yes
+ 
+
+Does the repository contain an appropriate LICENSE? 
+	Yes
+ 
+
+What is something the group could add to the README.md to make it more descriptive?
+	Maybe a thumbnail to spice it up?
+ 
+
+Pay a compliment to the group based on the quality of the game.
+	It's lovely! Especially with only three members. The code is well-organized
+	and follows some good conventions. Good job!
+
+
+How many of your points would you allocate to this project?
+	2
+
